@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<h2>Listado de clientes</h2>
+<h2>Listado de usuarios</h2>
 
-	<form action="accionesClientes.php" method="post">
+	<form action="accionesUsuarios.php" method="post">
 			<input type="hidden" name="action" value="crear">
 			<input class="btn-emp-2" type="submit" value="Crear Cliente">
 	</form>
@@ -46,7 +46,7 @@ while($mostrar = $consulta->fetch_assoc()){
 	<td><?php echo $mostrar["email"]?></td>
 	<td>
 		<!--En la primera linea obtenemos el id que queremos editar, en la segunda definimos la accion del boton para el switch-->
-		<form action="accionesClientes.php" method="post">
+		<form action="accionesUsuarios.php" method="post">
 			<input type="hidden" name="id" value="<?php echo $mostrar ["id"]?>">
 			<input type="hidden" name="action" value="editar">
 			<input class="btn-list" type="submit" value="Editar">
@@ -55,7 +55,7 @@ while($mostrar = $consulta->fetch_assoc()){
 	</td>
 
 	<td>
-		<form action="accionesClientes.php" method="post">
+		<form action="accionesUsuarios.php" method="post">
 			<input type="hidden" name="id" value="<?php echo $mostrar ["id"]?>">
 			<input type="hidden" name="action" value="eliminar">
 			<input class="btn-list-dlt" type="submit" value="Eliminar">
@@ -74,4 +74,4 @@ mysqli_close(conectarDB());
 </div>
     
 </body>
-</html>l
+</html>
