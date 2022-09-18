@@ -4,7 +4,8 @@ CREATE OR REPLACE TABLE users(
 	surname VARCHAR(60), 
 	email VARCHAR(30) UNIQUE, 
 	password VARCHAR(20),
-    inside BOOLEAN);
+    rol VARCHAR(10),
+    block BOOLEAN);
 
     CREATE OR REPLACE TABLE registration(
 	id INT PRIMARY KEY AUTO_INCREMENT,

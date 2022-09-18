@@ -1,0 +1,10 @@
+body{
+    background-color: #C0B7B1;
+}
+
+
+.vertical-center {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+ }

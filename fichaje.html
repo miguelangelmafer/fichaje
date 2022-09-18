@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fichaje</title>
+    <scrip></scrip>
+</head>
+<body>
+    <div class="form-ini">
+
+    <form action="guardarfichaje.php" method= "POST">
+        <h3>Inicio sesión</h3>
+        <label>Usuario</label><br>
+        <input type="text" name="user"><br>
+        <label>Contraseña</label><br>
+        <input type="password" name="pass"><br><br>
+        <input id="p1" type="hidden" name="hour" value="">
+        <input id="p2" type="hidden" name="date" value="">
+        <input class="btn-ini" type="submit" value="Fichar">
+    </form>
+    </div>
+
+<script>
+const now = new Date();
+const currentHour = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
+const currentDate = now.getFullYear() + '/'+ (now.getMonth()+1) + '/' + now.getDate();
+document.getElementById("p1").value = currentHour;
+document.getElementById("p2").value = currentDate;
+</script>
+
+
+</body>
+</html>

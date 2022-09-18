@@ -5,18 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<br>
+<div class="container">
+	
 <h2>Listado de usuarios</h2>
 
-	<form action="accionesUsuarios.php" method="post">
-			<input type="hidden" name="action" value="crear">
-			<input class="btn-emp-2" type="submit" value="Crear Cliente">
-	</form>
-	<br>
-<div>
-	<table>
+<form action="accionesUsuarios.php" method="post">
+		<input type="hidden" name="action" value="crear">
+		<input class="btn btn-success btn-sm" type="submit" value="Crear Usuario">
+</form>
+<br>
+
+	<table class="table table-striped table-bordered">
 		<tr>
 			<th>ID</th>
 			<th>Nombre</th>
@@ -49,7 +54,7 @@ while($mostrar = $consulta->fetch_assoc()){
 		<form action="accionesUsuarios.php" method="post">
 			<input type="hidden" name="id" value="<?php echo $mostrar ["id"]?>">
 			<input type="hidden" name="action" value="editar">
-			<input class="btn-list" type="submit" value="Editar">
+			<input class="btn btn-warning btn-sm" type="submit" value="Editar">
 		</form>
 	
 	</td>
@@ -58,7 +63,7 @@ while($mostrar = $consulta->fetch_assoc()){
 		<form action="accionesUsuarios.php" method="post">
 			<input type="hidden" name="id" value="<?php echo $mostrar ["id"]?>">
 			<input type="hidden" name="action" value="eliminar">
-			<input class="btn-list-dlt" type="submit" value="Eliminar">
+			<input class="btn btn-danger btn-sm" type="submit" value="Eliminar">
 		</form>
 	
 	</td>

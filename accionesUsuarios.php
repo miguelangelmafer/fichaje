@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
 <?php 
 
 //$id_nombre=$_POST["id"];
@@ -28,7 +39,7 @@ switch ($accion) {
 
 
 	case 'eliminarUsuario':
-		eliminarClienteBD($_POST["id_usuario"]);
+		eliminarUsuarioBD($_POST["id_usuario"]);
 		break;
 
 
@@ -80,17 +91,16 @@ function eliminacionUsuario(){
     		
     		<input type="hidden" name="id_usuario" value="<?php echo $usuario["id"]?>">
 			<h2><?php echo $usuario ["name"]?></h2>
-    		<input class="btn-emp-2" type="submit" value = "Sí">
+    		<input class="btn btn-success btn-sm" type="submit" value = "Sí">
     	</form> 
-		<br>
     	<form action="listarUsuarios.php" method="post">
-    		<input class="btn-dlt" type="submit" value = "No">   		
+    		<input class="btn btn-danger btn-sm" type="submit" value = "No">   		
     	</form>   
         <?php
 }
 
 
-function eliminarClienteBD($id_usuario){
+function eliminarUsuarioBD($id_usuario){
 
 	include("config.php");
     
@@ -102,7 +112,7 @@ function eliminarClienteBD($id_usuario){
     $result = mysqli_query(conectarDB(), $query);
     if ($result) {
         echo "<div class='success-msg'><h5>Usuario Eliminado</h5></div><br>";?>
-        <a class="btn-dlt" href="listarUsuarios.php">Volver</a><br>
+        <a class="btn btn-dark btn-sm" href="listarUsuarios.php">Volver</a><br>
     <?php 
     }
     else {
@@ -117,6 +127,7 @@ function eliminarClienteBD($id_usuario){
 function creacionUsuario(){
 
 	?>
+<div class="container">
 		<h2>Creación usuario</h2>
         <form action="accionesUsuarios.php" method="post">
         <label>Nombre</label><br>
@@ -125,13 +136,13 @@ function creacionUsuario(){
         <input type="text" name="surname"><br><br>
         <label>Email</label><br>
         <input type="text" name="email"><br><br>
-        <label>Contresaseña</label><br>
+        <label>Contraseña</label><br>
         <input type="password" name="password"><br><br>
         <input type="hidden" name="action" value="crear">
-        <input class="btn-ini" type="submit" value="Crear usuario">
+        <input class="btn btn-success btn-sm" type="submit" value="Crear usuario">
         <input type="hidden" name="action" value="crearUsuario">
     	</form> 
-		   
+</div>
         <?php
 }
 
@@ -146,7 +157,7 @@ function crearUsuarioBD($name,$surname,$email,$password){
 
     if ($consulta) {
         echo "<div class='success-msg'><h5>Usuario Creado</h5></div><br>";?>
-        <a class="btn-dlt" href="listarUsuarios.php">Volver</a><br>
+        <a class="btn btn-dark btn-sm" href="listarUsuarios.php">Volver</a><br>
     <?php 
     }
     else {
@@ -185,11 +196,11 @@ function edicionUsuario(){
 
     		<br><br>
 			
-    		<input class="btn-emp-2" type="submit" value = "Guardar">
+    		<input class="btn btn-success btn-sm" type="submit" value = "Guardar">
     	</form> 
 		<br>
     	<form action="listarUsuarios.php" method="post">
-    		<input class="btn-dlt" type="submit" value = "Cancelar">   		
+    		<input class="btn btn-danger btn-sm" type="submit" value = "Cancelar">   		
     	</form>   
 	</div>
         <?php
@@ -215,20 +226,20 @@ function edicionUsuario(){
             $error = mysqli_error($con);
             if(str_contains($error,'email')){
                 echo "<div class='btn-dlt'>El email " . $email . " ya está registrado</div><br><br>";
-                ?><a class="btn-dlt" href="listarUsuarios.php">Volver</a><br><?php
+                ?><a class="btn btn-dark btn-sm" href="listarUsuarios.php">Volver</a><br><?php
             }
     
             else{
             echo "Error query:" . mysqli_error(conectarDB());
             echo $query;
-            ?><a class="btn-dlt" href="listarUsuarios.php">Volver</a><br><?php
+            ?><a class="btn btn-dark btn-sm" href="listarUsuarios.php">Volver</a><br><?php
         }
     
         }
         else {
             
             echo "<div class='success-msg'><h5>Usuario modificado</h5></div><br> <br>";?>
-            <a class="btn-dlt" href="listarUsuarios.php">Volver</a><br>
+            <a class="btn btn-dark btn-sm" href="listarUsuarios.php">Volver</a><br>
         <?php 
         }
             
@@ -237,3 +248,6 @@ function edicionUsuario(){
     }
 
 ?>
+	
+</body>
+</html>

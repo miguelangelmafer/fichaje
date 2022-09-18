@@ -4,32 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fichaje</title>
-    <scrip></scrip>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="form-ini">
-
-    <form action="guardarfichaje.php" method= "POST">
-        <h3>Inicio sesión</h3>
-        <label>Usuario</label><br>
-        <input type="text" name="user"><br>
-        <label>Contraseña</label><br>
-        <input type="password" name="pass"><br><br>
-        <input id="p1" type="hidden" name="hour" value="">
-        <input id="p2" type="hidden" name="date" value="">
-        <input class="btn-ini" type="submit" value="Fichar">
-    </form>
+    <div class="">
+        <div class="container-fluid">
+          <div class="row vertical-center">
+              <form class="col-xs-8 col-xs-offset-2  col-sm-6 col-sm-offset-3 col-md-4 col-sm-offset-4 col-lg-2 col-lg-offset-5">
+                <h1>Sign In</h1>
+                <p>
+                  <label class="sr-only" for="">Email Address</label>
+                  <input class="form-control" type="email" placeholder="Email Address" required autofocus>
+                </p>
+                <p>
+                  <label class="sr-only" for="">Password</label>
+                  <input class="form-control" type="email" placeholder="Password" required>
+                </p>
+                <p class="checkbox">
+                  <label><input type="checkbox">Remember Me</label>
+                </p>
+                <button class="btn btn-primary btn-block" type="sumbit">Sign In</button>
+              </form>
+          </div>
+        </div>
     </div>
-
-<script>
-const now = new Date();
-const currentHour = now.getHours() + ':' + now.getMinutes() + ':' + now.getSeconds();
-const currentDate = now.getFullYear() + '/'+ (now.getMonth()+1) + '/' + now.getDate();
-document.getElementById("p1").value = currentHour;
-document.getElementById("p2").value = currentDate;
-</script>
-
-
 </body>
 </html>
