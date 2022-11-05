@@ -1,10 +1,16 @@
 body{
-    background-color: #C0B7B1;
+    background-color: burlywood;
 }
 
+form{
+    border: 1px solid black;
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 15px;
+}
 
-.vertical-center {
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
- }
+h1{
+    text-align: center;
+    color: green;
+}

@@ -12,5 +12,8 @@ include("config.php");
 	$sql="INSERT INTO registration (date,hour) VALUES ('$date','$hour')";
 	$consulta = mysqli_query($con,$sql);
 
+	//redirigir tras fichar
+	header("Location: fichajeExito.html");
+
 ?>
 
